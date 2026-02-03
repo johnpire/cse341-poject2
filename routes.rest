@@ -1,0 +1,31 @@
+// LOCALHOST
+@localhostNum = 3090
+
+### GET test subjects
+GET http://localhost:{{localhostNum}}/test
+
+### test post
+POST http://localhost:{{localhostNum}}/test HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "test",
+  "value": "123"
+}
+
+### Update a contact by ID
+@updateContactById = 697e0b403c0144b2ab3a72a4
+PUT http://localhost:{{localhostNum}}/contacts/{{updateContactById}} HTTP/1.1
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@email.com",
+  "favoriteColor": "green",
+  "birthday": "1998/7/15"
+}
+
+### Delete a contact by ID
+@deleteContactById = 697e0b423c0144b2ab3a72a5
+DELETE http://localhost:{{localhostNum}}/contacts/{{deleteContactById}}
