@@ -5,10 +5,10 @@
     "description": "Testing API documentation generation with Swagger",
     "version": "1.0.0"
   },
-  "host": "localhost:3090",
+  "host": "cse341-poject2.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
