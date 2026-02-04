@@ -18,7 +18,12 @@ const createTest = async (req, res, next) => {
     try {
         const test = {
             name: req.body.name,
-            value: req.body.value
+            value: req.body.value,
+            age: req.body.age,
+            email: req.body.email,
+            isActive: req.body.isActive,
+            role: req.body.role,
+            createdAt: req.body.createdAt
         };
         const result = await mongodb.getDatabase().db().collection('test').insertOne(test);
         if (result.acknowledged) {
@@ -44,7 +49,12 @@ const updateTest = async (req, res, next) => {
         const testId = new objectId(req.params.id);
         const test = {
             name: req.body.name,
-            value: req.body.value
+            value: req.body.value,
+            age: req.body.age,
+            email: req.body.email,
+            isActive: req.body.isActive,
+            role: req.body.role,
+            createdAt: req.body.createdAt
         }
         const result = await mongodb.getDatabase().db().collection('test').replaceOne({ _id: testId }, test);
         if (result.modifiedCount > 0) {
