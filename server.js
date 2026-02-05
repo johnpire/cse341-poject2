@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 const port = process.env.PORT || 3090;
 app.use(session({
-    secret: 'your_secret_key',
+    secret: SESSION_SECRET,
     resave: false,
     saveUninitialized: true
 }));
